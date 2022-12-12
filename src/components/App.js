@@ -3,6 +3,8 @@ import '../styles/App.css';
 import getDataFromApi from '../services/Api.js';
 import ls from '../services/LocalStorage'
 import { useEffect, useState } from 'react';
+import CharactersList from '../components/Characters/CharactersList';
+import logo from '../images/logo.png';
 
 function App() {
 
@@ -24,7 +26,8 @@ function App() {
 
   return (
     <div>
-      <h1>Hi Dayana!</h1>
+      <img src={logo} alt="Rick and Morty's logo" title="Rick and Morty's logo"/>
+      <CharactersList users={userData}/> {/*Data received from the API*/}
     </div>
   );
 }
