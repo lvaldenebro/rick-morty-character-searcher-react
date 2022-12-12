@@ -1,5 +1,6 @@
-// Fichero src/components/App.js
-import '../styles/App.css';
+// Styles
+import '../styles/App.scss';
+//Components
 import getDataFromApi from '../services/Api.js';
 import ls from '../services/LocalStorage'
 import { useEffect, useState } from 'react';
@@ -26,8 +27,13 @@ function App() {
 
   return (
     <div>
-      <img src={logo} alt="Rick and Morty's logo" title="Rick and Morty's logo"/>
-      <CharactersList users={userData}/> {/*Data received from the API*/}
+      <header className='header'>
+        <img className='header_logo' src={logo} alt="Rick and Morty's logo" title="Rick and Morty's logo"/>
+        {/* filter */}
+      </header>
+      <main>
+        <CharactersList users={userData}/> {/*Data received from the API*/}
+      </main>
     </div>
   );
 }

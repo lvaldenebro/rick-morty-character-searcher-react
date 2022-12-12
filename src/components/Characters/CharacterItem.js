@@ -1,6 +1,6 @@
 const CharacterItem = ( {user} ) => {
     return (
-        <li key={user.id}>
+        <li key={user.id} className='list'>
             {/* link/navlink */}
             <img src={user.image} alt={user.name} title={`Image of ${user.name}`}/>
             <h4>{user.name} </h4> {/* name+surname */}

@@ -1,0 +1,12 @@
+.list {
+  /*list elements */
+  list-style: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  &_logo {
+    width: 20vw;
+  }
+}
