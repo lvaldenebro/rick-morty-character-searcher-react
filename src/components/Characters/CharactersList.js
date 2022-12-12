@@ -6,7 +6,7 @@ const CharactersList = ( {users} ) => {
     })
     return (
         <section>
-            <ul>{characterElements}</ul>
+            <ul className='list'>{characterElements}</ul>
         </section>
 )};
 
