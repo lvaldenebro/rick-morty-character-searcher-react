@@ -6,10 +6,12 @@ import ls from '../services/LocalStorage'
 import { useEffect, useState } from 'react';
 import CharactersList from '../components/Characters/CharactersList';
 import logo from '../images/logo.png';
+import Filters from './Filters';
 
 function App() {
 
   const [userData, setUserData] = useState(ls.get('userData', []));
+  const [filterName, setFilterName] = useState(ls.get('filterName',''));
   
   //FETCH AND API DATA
   useEffect(() => {
@@ -23,16 +25,27 @@ function App() {
   //LocaleStorage
   useEffect(() => {
     ls.set('userData', userData);
-  }, [userData]);
+    ls.set('filterName', filterName)
+  }, [userData, filterName]);
+
+  //HANDLES
+  const handleFilterName = (value) => {
+    setFilterName(value);
+  }
+
+  //FILTERS
+  const charactersFiltered = userData.filter((eachCharacter) => {
+    return eachCharacter.name.toLowerCase().includes(filterName.toLowerCase()) //(filterName.toLowerCase()) should all be into the () because all of it is being checked with the includes. BE CAREFUL
+  });
 
   return (
     <div>
       <header className='header'>
         <img className='header_logo' src={logo} alt="Rick and Morty's logo" title="Rick and Morty's logo"/>
-        {/* filter */}
+        <Filters filterByName={filterName} handleFilterName={handleFilterName}/>
       </header>
       <main>
-        <CharactersList users={userData}/> {/*Data received from the API*/}
+        <CharactersList users={charactersFiltered}/> {/*Data received from the API. Once we have filtered data, we change it*/}
       </main>
     </div>
   );
