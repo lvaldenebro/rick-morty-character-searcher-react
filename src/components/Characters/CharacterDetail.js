@@ -8,10 +8,10 @@ const CharacterDetail = ( {character} ) => {
                 {/* link/navlink */}
                 <img src={character.image} alt={character.name} title={`Image of ${character.name}`}/>
                 <h4>{character.name}</h4> {/* name+surname */}
-                {/* <p>{`Status: ${character.status}`}</p>
+                <p>{`Status: ${character.status}`}</p>
                 <p>{`Species: ${character.species}`}</p>
-                <p>{`Origin: ${character.planet}`}</p> */}
-                {/* <p>{`Episodes: ${character.episodes}`}</p> */}
+                <p>{`Origin: ${character.planet}`}</p>
+                <p>{`Episodes: ${character.episodes}`}</p>
             </article>
         </>
 )};

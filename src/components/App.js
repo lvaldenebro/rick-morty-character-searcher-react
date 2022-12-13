@@ -1,15 +1,19 @@
 // Styles
 import '../styles/App.scss';
 //Components
-import getDataFromApi from '../services/Api.js';
-import ls from '../services/LocalStorage'
-import { useEffect, useState } from 'react';
-import CharactersList from '../components/Characters/CharactersList';
-import CharacterDetail from '../components/Characters/CharacterDetail'; //ToREVIEW
-import logo from '../images/logo.png';
+import CharactersList from './Characters/CharactersList';
+import CharacterDetail from './Characters/CharacterDetail';
 import Filters from './Filters';
+//Services
+import getDataFromApi from '../services/Api.js';
+import ls from '../services/LocalStorage';
+//Router
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useLocation, matchPath} from 'react-router';
+//Other imports
+import logo from '../images/logo.png';
+
 
 function App() {
 
@@ -43,9 +47,9 @@ function App() {
 
   //DINAMIC ROUTES
   const {pathname} = useLocation();
-  const routeData = matchPath('/character-detail/:characterId', pathname);
-  const characterId = routeData !== null ? routeData.params.characterId : '';
-  const character = characterData.find((char) => char.id === characterId);
+  const dataURL = matchPath('/character-detail/:characterId', pathname);
+  const characterId = dataURL !== null ? dataURL.params.characterId : '';
+  const characterLocated = characterData.find((char) => char.id === characterId);
 
   return (
     <div>
@@ -57,11 +61,13 @@ function App() {
           <Route path='/' element={
             <>
               <Filters filterByName={filterName} handleFilterName={handleFilterName}/>
-              <CharactersList characters={charactersFiltered}/>
-            </>}
-           />
+              <CharactersList characters={charactersFiltered} />
+            </>
+            }
+          />
           {/*Data received from the API. Once we have filtered data, we change it*/}
-          <Route path='/character-detail/:characterId' element={<CharacterDetail character={character}/>}/>
+          <Route path='/character-detail/:characterId' element={<CharacterDetail character={characterLocated}/>}/>
+          {/* THIS COMPONENT IS FAILING */}
         </Routes>
       </main>
     </div>
