@@ -44,6 +44,7 @@ function App() {
   const charactersFiltered = characterData.filter((eachCharacter) => {
     return eachCharacter.name.toLowerCase().includes(filterName.toLowerCase()) //(filterName.toLowerCase()) should all be into the () because all of it is being checked with the includes. BE CAREFUL
   });
+  charactersFiltered.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); //sorts alphabetically the characters by the first name
 
   //DINAMIC ROUTES
   const {pathname} = useLocation();
@@ -56,7 +57,7 @@ function App() {
       <header className='header'>
         <img className='header_logo' src={logo} alt="Rick and Morty's logo" title="Rick and Morty's logo"/>
       </header>
-      <main>
+      <main className='main'>
         <Routes>
           <Route path='/' element={
             <>
