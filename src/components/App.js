@@ -49,7 +49,7 @@ function App() {
   const {pathname} = useLocation();
   const dataURL = matchPath('/character-detail/:characterId', pathname);
   const characterId = dataURL !== null ? dataURL.params.characterId : '';
-  const characterLocated = characterData.find((char) => char.id === characterId);
+  const characterLocated = characterData.find((char) => char.id === parseInt(characterId)); //Carachterlocated is undefined, the characterId was not meeting the condition, as in the object we had an id, we need to convert the id into INTEGER
 
   return (
     <div>
@@ -60,7 +60,7 @@ function App() {
         <Routes>
           <Route path='/' element={
             <>
-              <Filters filterByName={filterName} handleFilterName={handleFilterName}/>
+              <Filters filterName={filterName} handleFilterName={handleFilterName}/>
               <CharactersList characters={charactersFiltered} />
             </>
             }
