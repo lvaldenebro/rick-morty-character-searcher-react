@@ -1,10 +1,13 @@
-const CharacterItem = ( {user} ) => {
+import { Link } from 'react-router-dom';
+
+const CharacterItem = ( {character} ) => {
     return (
-        <li key={user.id} className='list_item'>
-            {/* link/navlink */}
-            <img src={user.image} alt={user.name} title={`Image of ${user.name}`}/>
-            <h4>{user.name} </h4> {/* name+surname */}
-            <p>{user.species}</p>
+        <li key={character.id} className='list_item'>
+            <Link to={`/character-detail/${character.id}`}>
+                <img src={character.image} alt={character.name} title={`Image of ${character.name}`}/>
+                <h4>{character.name} </h4> {/* name+surname */}
+                <p>{character.species}</p>
+            </Link>
         </li>
 )};
 

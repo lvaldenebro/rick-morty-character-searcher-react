@@ -3,15 +3,15 @@ const getDataFromApi = () => {
     //Access to the first 20 characters, which is the same, to the first page
     .then((response) => response.json())
     .then((data) => {
-        const cleanData = data.results.map((user) => {
+        const cleanData = data.results.map((character) => {
             return {
-                id: user.id,
-                image: user.image,
-                name: user.name, //name  + surname
-                species: user.species,
-                planet: user.origin.name,
-                // episodes: user.episode.length,
-                status: user.status,
+                id: character.id,
+                image: character.image,
+                name: character.name, //name  + surname
+                species: character.species,
+                planet: character.origin.name,
+                // episodes: character.episode.length,
+                status: character.status,
             };
         });
         return cleanData;

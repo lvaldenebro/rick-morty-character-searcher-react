@@ -4,7 +4,7 @@ const Filters = ( {filterName, handleFilterName} ) => {
     };
     return (
         <form>
-            <input className='header_input' type="text" onChange={handleChange} value={filterName}/>
+            <input className='main_input' type="text" onChange={handleChange} value={filterName}/>
         </form>
 )};
 

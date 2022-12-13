@@ -1,8 +1,8 @@
 import CharacterItem from './CharacterItem';
 
-const CharactersList = ( {users} ) => {
-    const characterElements = users.map((user) => {
-        return <CharacterItem user={user}/>
+const CharactersList = ( {characters} ) => {
+    const characterElements = characters.map((character) => {
+        return <CharacterItem character={character}/>
     })
     return (
         <section>
