@@ -4,6 +4,7 @@ import '../styles/App.scss';
 import CharactersList from './Characters/CharactersList';
 import CharacterDetail from './Characters/CharacterDetail';
 import Filters from './Filters';
+import Error404 from './Error404';
 //Services
 import getDataFromApi from '../services/Api.js';
 import ls from '../services/LocalStorage';
@@ -49,8 +50,16 @@ function App() {
   //DINAMIC ROUTES
   const {pathname} = useLocation();
   const dataURL = matchPath('/character-detail/:characterId', pathname);
-  const characterId = dataURL !== null ? dataURL.params.characterId : '';
-  const characterLocated = characterData.find((char) => char.id === parseInt(characterId)); //Carachterlocated is undefined, the characterId was not meeting the condition, as in the object we had an id, we need to convert the id into INTEGER
+  const characterId = dataURL !== null ? dataURL.params.characterId : ''; //to check the route
+  const characterLocated = characterData.find((char) => char.id === parseInt(characterId)); //Characterlocated is undefined, the characterId was not meeting the condition, as in the object we had an id, we need to convert the id into INTEGER
+
+  //MANAGING ROUTES
+  const CharacterDetailRoute = () => {
+    if (characterLocated === undefined) {
+      return <Error404/>
+    } else {
+      return <CharacterDetail character={characterLocated}/>
+    }};
 
   return (
     <div>
@@ -67,7 +76,8 @@ function App() {
             }
           />
           {/*Data received from the API. Once we have filtered data, we change it*/}
-          <Route path='/character-detail/:characterId' element={<CharacterDetail character={characterLocated}/>}/>
+          <Route path='/character-detail/:characterId' element={CharacterDetailRoute(characterLocated)}/>
+          {/* <Route path='/character-detail/:characterId' element={<CharacterDetail character={characterLocated}/>}/> */}
           {/* THIS COMPONENT IS FAILING */}
         </Routes>
       </main>
