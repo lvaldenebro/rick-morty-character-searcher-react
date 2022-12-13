@@ -3,7 +3,7 @@ import '../styles/App.scss';
 //Components
 import CharactersList from './Characters/CharactersList';
 import CharacterDetail from './Characters/CharacterDetail';
-import Filters from './Filters';
+import FilterName from './FilterName';
 import Error404 from './Error404';
 import Header from './Header';
 //Services
@@ -70,15 +70,15 @@ function App() {
         <Routes>
           <Route path='/' element={
             <>
-              <Filters filterName={filterName} handleFilterName={handleFilterName}/>
+              <FilterName filterName={filterName} handleFilterName={handleFilterName}/>
               <CharactersList characters={charactersFiltered} />
             </>
             }
           />
           {/*Data received from the API. Once we have filtered data, we change it*/}
           <Route path='/character-detail/:characterId' element={CharacterDetailRoute(characterLocated)}/>
-          {/* <Route path='/character-detail/:characterId' element={<CharacterDetail character={characterLocated}/>}/> */}
-          {/* THIS COMPONENT IS FAILING */}
+          {/* other routes */}
+          <Route path='*' element={<Error404/>}/>
         </Routes>
       </main>
     </div>

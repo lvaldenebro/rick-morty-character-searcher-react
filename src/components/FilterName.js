@@ -1,5 +1,5 @@
 // Styles
-import '../../src/styles/components/Filters.scss';
+import '../../src/styles/components/FilterName.scss';
 
 const Filters = ( {filterName, handleFilterName} ) => {
     const handleChange = (ev) => {
