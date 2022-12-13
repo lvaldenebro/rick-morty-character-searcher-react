@@ -1,3 +1,4 @@
+//Resources
 import error from '../images/error-404.jpg';
 
 const Error404 = () => {

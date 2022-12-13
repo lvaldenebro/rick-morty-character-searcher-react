@@ -1,6 +1,6 @@
 //Resources
 import logo from '../images/logo.png';
-//Style files
+//Styles
 import '../styles/components/Header.scss';
 
 const Header = () => {

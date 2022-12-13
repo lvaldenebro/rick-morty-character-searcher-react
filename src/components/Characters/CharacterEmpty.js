@@ -1,3 +1,4 @@
+//Reources
 import empty from '../../images/empty.jpg';
 
 const CharactersEmpty = () => {

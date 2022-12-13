@@ -1,7 +1,7 @@
 //Components
 import CharacterItem from './CharacterItem';
 import CharactersEmpty from './CharacterEmpty';
-//Style files
+//Styles
 import '../../styles/components/CharactersList.scss';
 
 const CharactersList = ( {characters} ) => {

@@ -1,3 +1,6 @@
+// Styles
+import '../../src/styles/components/Filters.scss';
+
 const Filters = ( {filterName, handleFilterName} ) => {
     const handleChange = (ev) => {
         handleFilterName(ev.target.value);
