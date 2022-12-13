@@ -5,15 +5,17 @@ import CharactersList from './Characters/CharactersList';
 import CharacterDetail from './Characters/CharacterDetail';
 import Filters from './Filters';
 import Error404 from './Error404';
+import Header from './Header';
 //Services
 import getDataFromApi from '../services/Api.js';
 import ls from '../services/LocalStorage';
-//Router
+//Hooks
 import { useEffect, useState } from 'react';
+//Router
 import { Route, Routes } from 'react-router-dom';
 import { useLocation, matchPath} from 'react-router';
 //Other imports
-import logo from '../images/logo.png';
+
 
 
 function App() {
@@ -63,9 +65,7 @@ function App() {
 
   return (
     <div>
-      <header className='header'>
-        <img className='header_logo' src={logo} alt="Rick and Morty's logo" title="Rick and Morty's logo"/>
-      </header>
+      <Header/>
       <main className='main'>
         <Routes>
           <Route path='/' element={

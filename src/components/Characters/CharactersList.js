@@ -1,5 +1,8 @@
+//Components
 import CharacterItem from './CharacterItem';
-import CharactersEmpty from './CharactersEmpty';
+import CharactersEmpty from './CharacterEmpty';
+//Style files
+import '../../styles/components/CharactersList.scss';
 
 const CharactersList = ( {characters} ) => {
     let characterElements = [];
