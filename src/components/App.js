@@ -45,9 +45,9 @@ function App() {
 
   //FILTERS
   const charactersFiltered = characterData.filter((eachCharacter) => {
-    return eachCharacter.name.toLowerCase().includes(filterName.toLowerCase()) //(filterName.toLowerCase()) should all be into the () because all of it is being checked with the includes. BE CAREFUL
+    return eachCharacter.name.toLowerCase().includes(filterName.toLowerCase())
   });
-  charactersFiltered.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); //sorts alphabetically the characters by the first name
+  charactersFiltered.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); //sorts alphabetically the characters by first name
 
   //DINAMIC ROUTES
   const {pathname} = useLocation();
@@ -75,7 +75,6 @@ function App() {
             </>
             }
           />
-          {/*Data received from the API. Once we have filtered data, we change it*/}
           <Route path='/character-detail/:characterId' element={CharacterDetailRoute(characterLocated)}/>
           {/* other routes */}
           <Route path='*' element={<Error404/>}/>

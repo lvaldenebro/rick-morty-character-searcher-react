@@ -5,7 +5,7 @@ const Filters = ( {filterName, handleFilterName} ) => {
     const handleChange = (ev) => {
         handleFilterName(ev.target.value);
     };
-    const handleSubmit = (ev) => { //to avoid that the page refresh when clicking in into
+    const handleSubmit = (ev) => { //to avoid that the page refreshes when clicking in intro
         ev.preventDefault();
     }
     return (

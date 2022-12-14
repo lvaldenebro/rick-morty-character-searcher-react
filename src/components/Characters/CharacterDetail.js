@@ -43,8 +43,7 @@ const CharacterDetail = ( {character} ) => {
             <article key={character.id} className='main_item'>
                 <img src={character.image} alt={character.name} title={`Image of ${character.name}`}/>
                 <section>
-                    <h4>{character.name}</h4> {/* name+surname */}
-                    {/* call the function */}
+                    <h4>{character.name}</h4>
                     <p>{`Status: ${character.status}${isDead(character.status)}`}</p>
                     <p>{`Species: ${character.species}${whichSpecies(character.species)}`}</p>
                     <p>{`Origin: ${character.planet}`}</p>

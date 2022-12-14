@@ -1,6 +1,6 @@
 const getDataFromApi = () => {
     return fetch('https://rickandmortyapi.com/api/character')
-    //Access to the first 20 characters, which is the same, to the first page
+    //Access to the first 20 characters or, which is the same, to the first page
     .then((response) => response.json())
     .then((data) => {
         const cleanData = data.results.map((character) => {
