@@ -8,21 +8,13 @@ import '../../styles/components/CharacterDetail.scss';
 const CharacterDetail = ( {character} ) => {
 
     const isDead = (status) => {
-        if (status === 'Dead') {
-        return '💀'
-        }
         switch (status) {
             case 'Dead':
             return '💀';
-            break;
-            case 'unknown':
-            return '❔';
-            break;
             case 'Alive':
             return '🥳';
-            break
             default:
-            return status;
+            return '❔';
         }
 };
 
@@ -30,12 +22,10 @@ const CharacterDetail = ( {character} ) => {
         switch (species) {
             case 'Human':
             return '👤';
-            break;
             case 'Alien':
             return '👽';
-            break;
             default:
-            return species;
+            return '';
         }
     };
 
