@@ -3,7 +3,7 @@ import '../styles/App.scss';
 //Components
 import CharactersList from './Characters/CharactersList';
 import CharacterDetail from './Characters/CharacterDetail';
-import FilterName from './FilterName';
+import Filters from './Filters/Filters';
 import Error404 from './Error404';
 import Header from './Header';
 //Services
@@ -22,6 +22,7 @@ function App() {
 
   const [characterData, setCharacterData] = useState(ls.get('characterData', []));
   const [filterName, setFilterName] = useState(ls.get('filterName',''));
+  const [filterSpecies, setFilterSpecies] = useState(ls.get('filterSpecies',''));
   
   //FETCH AND API DATA
   useEffect(() => {
@@ -35,18 +36,28 @@ function App() {
   //LocaleStorage
   useEffect(() => {
     ls.set('characterData', characterData);
-    ls.set('filterName', filterName)
-  }, [characterData, filterName]);
+    ls.set('filterName', filterName);
+    ls.set('filterSpecies', filterSpecies);
+  }, [characterData, filterName, filterSpecies]);
 
   //HANDLES
   const handleFilterName = (value) => {
     setFilterName(value);
-  }
+  };
+
+  const handleFilterSpecies = (value) => {
+    setFilterSpecies(value);
+  };
 
   //FILTERS
-  const charactersFiltered = characterData.filter((eachCharacter) => {
+  const charactersFiltered = characterData
+  .filter((eachCharacter) => {
     return eachCharacter.name.toLowerCase().includes(filterName.toLowerCase())
+  })
+  .filter((eachCharacter) => {
+    return eachCharacter.species.toLowerCase().includes(filterSpecies.toLowerCase());
   });
+  
   charactersFiltered.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); //sorts alphabetically the characters by first name
 
   //DINAMIC ROUTES
@@ -70,7 +81,7 @@ function App() {
         <Routes>
           <Route path='/' element={
             <>
-              <FilterName filterName={filterName} handleFilterName={handleFilterName}/>
+              <Filters filterName={filterName} handleFilterName={handleFilterName} filterSpecies={filterSpecies} handleFilterSpecies={handleFilterSpecies}/>
               <CharactersList characters={charactersFiltered} />
             </>
             }

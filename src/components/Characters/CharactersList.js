@@ -1,3 +1,5 @@
+//PropsTypes
+import PropTypes from 'prop-types';
 //Components
 import CharacterItem from './CharacterItem';
 import CharactersEmpty from './CharacterEmpty';
@@ -20,4 +22,7 @@ const CharactersList = ( {characters} ) => {
         </section>
 )};
 
+CharactersList.propTypes = {
+    characters: PropTypes.array.isRequired,
+};
 export default CharactersList;

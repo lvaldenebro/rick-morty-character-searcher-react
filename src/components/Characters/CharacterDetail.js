@@ -1,3 +1,5 @@
+//PropsTypes
+import PropTypes from 'prop-types';
 //Router
 import { Link } from 'react-router-dom';
 //Styles
@@ -53,4 +55,8 @@ const CharacterDetail = ( {character} ) => {
         </>
 )};
 
+CharacterDetail.propTypes = {
+    character: PropTypes.object.isRequired,
+};
+//we are checking the object character, that is exactly what we are sending throw props
 export default CharacterDetail;

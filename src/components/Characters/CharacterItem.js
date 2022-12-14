@@ -1,5 +1,7 @@
 //Router
 import { Link } from 'react-router-dom';
+//PropsTypes
+import PropTypes from 'prop-types';
 //Styles
 import '../../styles/components/CharacterItem.scss';
 
@@ -13,5 +15,9 @@ const CharacterItem = ( {character} ) => {
             </Link>
         </li>
 )};
+
+CharacterItem.propTypes = {
+    character: PropTypes.object.isRequired,
+};
 
 export default CharacterItem;
