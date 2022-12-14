@@ -1,7 +1,7 @@
 //PropsTypes
 import PropTypes from 'prop-types';
 // Styles
-import '../../styles/components/Filters/InputFilter.scss';
+import '../../styles/components/filters/InputFilter.scss';
 
 const Input = ( props ) => {
     return (

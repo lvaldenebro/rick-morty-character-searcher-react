@@ -28,7 +28,7 @@ Clone all files in this repository
 Open it and run 'npm install' in your terminal. Once this is done, you will have created a new_modules folder that will allow you to use the page.
 Run 'npm-start' in your terminal, this will open the page in your predetermined browser.
 
-This json has preinstalled everything you'll need, so will be able to run it without any issues.
+This json has defined all dependencies, so will be able to run it without any issues.
 
 ## Credits
 

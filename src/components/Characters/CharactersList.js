@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CharacterItem from './CharacterItem';
 import CharactersEmpty from './CharacterEmpty';
 //Styles
-import '../../styles/components/CharactersList.scss';
+import '../../styles/components/characters/CharactersList.scss';
 
 const CharactersList = ( {characters} ) => {
     let characterElements = [];

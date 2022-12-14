@@ -1,9 +1,9 @@
 // Styles
 import '../styles/App.scss';
 //Components
-import CharactersList from './Characters/CharactersList';
-import CharacterDetail from './Characters/CharacterDetail';
-import Filters from './Filters/Filters';
+import CharactersList from './characters/CharactersList';
+import CharacterDetail from './characters/CharacterDetail';
+import Filters from './filters/Filters';
 import Error404 from './Error404';
 import Header from './Header';
 //Services

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 //PropsTypes
 import PropTypes from 'prop-types';
 //Styles
-import '../../styles/components/CharacterItem.scss';
+import '../../styles/components/characters/CharacterItem.scss';
 
 const CharacterItem = ( {character} ) => {
     return (
