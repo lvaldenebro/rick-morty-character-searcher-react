@@ -64,7 +64,7 @@ function App() {
   const {pathname} = useLocation();
   const dataURL = matchPath('/character-detail/:characterId', pathname);
   const characterId = dataURL !== null ? dataURL.params.characterId : ''; //to check the route
-  const characterLocated = characterData.find((char) => char.id === parseInt(characterId)); //Characterlocated is undefined, the characterId was not meeting the condition, as in the object we had an id, we need to convert the id into INTEGER
+  const characterLocated = characterData.find((char) => char.id.toString() === characterId); //Characterlocated is undefined, the characterId was not meeting the condition, as in the object we had an id, we need to convert the id into INTEGER
 
   //MANAGING ROUTES
   const CharacterDetailRoute = () => {
