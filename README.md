@@ -6,9 +6,9 @@ Welcome to the Rick and Morty's favourite place, in which you, as well as they, 
 
 ## Technologies
 
-This web page was made using HTML5, SaSS, React, JS, localStorage, API requests, propTypes, React Router DOM and the React Starter Kit, who uses NodeJS, Gulp and JSON.
+This web page was made using HTML5, Sass, React, JS, localStorage, API requests, propTypes, React Router DOM and the React Starter Kit, who uses NodeJS, Gulp and JSON.
 
-Please, take into account that all HTML, SaSS and React file are divided in components. Both SaSS and React files are named the same so it is easy to maintain and more ordered. All of them have descriptive names according to the place of the page they are developing or working on.
+Please, take into account that all HTML, Sass and React file are divided in components. Both Sass and React files are named the same so it is easy to maintain and more ordered. All of them have descriptive names according to the place of the page they are developing or working on.
 
 ## Table of contents and How to Use the Project
 
@@ -25,10 +25,17 @@ And as the localStorage is active, you will never lose the data you have searche
 If you want to download this project, you'll need to:
 
 Clone all files in this repository
-Open it and run 'npm install' in your terminal. Once this is done, you will have created a new_modules folder that will allow you to use the page.
-Run 'npm-start' in your terminal, this will open the page in your predetermined browser.
+Open it and run `npm install` in your terminal. Once this is done, you will have created a `node_modules` folder that will allow you to use the page.
+Run `npm-start` in your terminal, this will open the page in your predetermined browser.
 
-This json has defined all dependencies, so will be able to run it without any issues.
+If you want to deploy the code into GitHub Pages, once the code is done and pushed run `npm run githubpages` as all the needed commands are grouped under this alias in the package.json.
+
+## Demo
+
+You can see the result at [GitHub Pages](https://github.com/lvaldenebro/rick-morty-character-searcher-react).
+
+## License
+All this code is released into the public domain.
 
 ## Credits
 
