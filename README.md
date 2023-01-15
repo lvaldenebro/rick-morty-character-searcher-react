@@ -10,7 +10,7 @@ This web page was made using HTML5, Sass, React, JS, localStorage, API requests,
 
 Please, take into account that all HTML, Sass and React file are divided in components. Both Sass and React files are named the same so it is easy to maintain and more ordered. All of them have descriptive names according to the place of the page they are developing or working on.
 
-## Table of contents and How to Use the Project
+## How to Use the Project
 
 At the beginning of the page, just after the logo, you can find the filter, in which, guided by the placeholder, you can insert your request. The matches of your request will be displayed just after the filter. Filters work word by word as they are searching for every change.
 
