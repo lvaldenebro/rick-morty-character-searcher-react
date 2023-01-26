@@ -6,7 +6,7 @@ Welcome to the Rick and Morty's favourite place, in which you, as well as they, 
 
 ## Technologies
 
-This web page was made using HTML5, Sass, React, JS, localStorage, API requests, propTypes, React Router DOM and the React Starter Kit, who uses NodeJS, Gulp and JSON.
+This web page was made using HTML5, Sass, React, JS, localStorage, API requests, propTypes, React Router DOM.
 
 Please, take into account that all HTML, Sass and React file are divided in components. Both Sass and React files are named the same so it is easy to maintain and more ordered. All of them have descriptive names according to the place of the page they are developing or working on.
 
